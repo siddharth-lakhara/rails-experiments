@@ -11,4 +11,16 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  root "root#index"
+
+  namespace :api do
+    namespace :v1 do
+      get "/users/:id", to: "users#findOne"
+      get "/users/all", to: "users#findAll"
+
+      post "/users", to: "users#create"
+    end
+  end
+
 end
