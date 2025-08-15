@@ -1,0 +1,59 @@
+// File generated via Kilo Code + Gpt 5 OSS. Cost = 0.06 USD
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "rdbg",
+      "name": "Rails: server (puma)",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "RAILS_ENV": "development"
+      },
+      "script": "bin/rails",
+      "args": [
+        "server",
+        "-p",
+        "3000"
+      ],
+      "useBundler": true,
+      "stopOnEntry": false
+    },
+    {
+      "type": "rdbg",
+      "name": "Rails: console",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "script": "bin/rails",
+      "args": [
+        "console"
+      ],
+      "useBundler": true
+    },
+    {
+      "type": "rdbg",
+      "name": "Rails: test (current file)",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "script": "bin/rails",
+      "args": [
+        "test",
+        "${file}"
+      ],
+      "useBundler": true
+    },
+    {
+      "type": "rdbg",
+      "name": "Rake task",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "script": "bin/rake",
+      "useBundler": true
+    },
+    {
+      "type": "rdbg",
+      "name": "Attach: rdbg (listen)",
+      "request": "attach"
+    }
+  ]
+}
