@@ -16,10 +16,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get "/users/:id", to: "users#findOne"
-      get "/users/all", to: "users#findAll"
-
       post "/users", to: "users#create"
+      get "/users/:user_id", to: "users#findOne"
+      patch "/users/:user_id", to: "users#updateUser"
+      delete "/users/:user_id", to: "users#deleteUser"
     end
   end
 

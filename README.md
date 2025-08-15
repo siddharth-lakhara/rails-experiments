@@ -1,24 +1,15 @@
-# README
+# Rails experiments
+Simple application built to understand rails. Following "experiments" has been done
+1. Users DB for CRUD operations
+2. Create a resource entity (simulating any app resource like file), can be owned by only single user - To understand one-to-many mapping
+3. Collaboraters - to understand many-many mapping - allow user to access any resource as either 
+    1. editor
+    2. viewer 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ai Cost log
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Prompt | Cost
+Fix bug in routing, by moving /user to /api/v1/user | 0.06 USD
+Implement first draft of UserController#create | 0.12 USD
+add migration name column to users table | 0.04 USD
+Implement update and delete method | 0.12 USD 

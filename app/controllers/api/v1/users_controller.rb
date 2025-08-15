@@ -4,17 +4,38 @@ module Api
       protect_from_forgery with: :null_session
 
       def findOne
-        # Implement lookup logic
+        user = User.find_by(id: params[:user_id])
+        if user.nil?
+          return render json: { errors: "not found"}, status: :not_found
+        end
+        render json: user.slice(:id, :name, :email), status: :ok
+      end
+
+      def deleteUser
+        user = User.find_by(id: params[:user_id])
+        user.destroy if user
         head :ok
       end
 
-      def findAll
-        # Implement list logic
-        head :ok
+      def updateUser
+        user = User.find_by(id: params[:user_id])
+        return render json: { errors: "not found" }, status: :not_found if user.nil?
+
+        permitted = params.permit(:name, :email)
+        update_payload = permitted.slice(:name, :email)
+        begin
+          if user.update(update_payload)
+            render json: user.slice(:id, :name, :email), status: :ok
+          else
+            render json: { errors: user.errors.full_messages }, status: :unprocessable_content
+          end
+        rescue ActiveRecord::RecordNotUnique => err
+          render json: { errors: "email already taken" }, status: :unprocessable_content
+        rescue StandardError => err
+          render json: { errors: "something went wrong" }, status: :unprocessable_content
+        end
       end
 
-      # First draft created via AI
-      # (Kilo Code + GPT 5 OSS) = (0.12 + 0.04 +0.07) = 0.23 USD
       def create
         permitted = params.permit(:email, :name)
 
