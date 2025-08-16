@@ -6,10 +6,11 @@ Simple application built to understand rails. Following "experiments" has been d
     1. editor
     2. viewer 
 
-## Ai Cost log
+## AI Cost log
 
-Prompt | Cost
-Fix bug in routing, by moving /user to /api/v1/user | 0.06 USD
-Implement first draft of UserController#create | 0.12 USD
-add migration name column to users table | 0.04 USD
-Implement update and delete method | 0.12 USD 
+| Prompt | Cost |
+| --- | --- |
+| Fix bug in routing, by moving /user to /api/v1/user | 0.06 USD |
+| Implement first draft of UserController#create | 0.12 USD |
+| add migration name column to users table | 0.04 USD |
+| Implement update and delete method | 0.12 USD  |
