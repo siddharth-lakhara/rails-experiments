@@ -1,7 +1,19 @@
 module Api
   module V1
     class UsersController < ApplicationController
+      include Api::V1::UsersHelper
       protect_from_forgery with: :null_session
+
+      def login
+        user = User.find_by(email: params[:email])
+
+        if user
+          token = generate_jwt_token(user[:id])
+          render json: { token: token }, status: :ok
+        else
+          render json: { error: "User not found" }, status: :not_found
+        end
+      end
 
       def findOne
         user = User.find_by(id: params[:user_id])

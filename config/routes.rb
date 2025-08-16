@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      post "/login", to: "users#login"
+
       post "/users", to: "users#create"
       get "/users/:user_id", to: "users#findOne"
       patch "/users/:user_id", to: "users#updateUser"

@@ -14,3 +14,6 @@ Simple application built to understand rails. Following "experiments" has been d
 | Implement first draft of UserController#create | 0.12 USD |
 | add migration name column to users table | 0.04 USD |
 | Implement update and delete method | 0.12 USD  |
+| Implement resource controller | 0.15 USD |
+| Implement user authentication and update resource controller routes | 0.2 USD |
+| Generate collaborator model and relevant controller logic |  |
