@@ -20,6 +20,14 @@ Rails.application.routes.draw do
       get "/users/:user_id", to: "users#findOne"
       patch "/users/:user_id", to: "users#updateUser"
       delete "/users/:user_id", to: "users#deleteUser"
+
+      post "/resource/:owner_id", to: "resource#create"
+      get "/resource/:owner_id/all", to: "resource#findAll"
+      get "/resource/:owner_id/:resource_id", to: "resource#findOne"
+      get "/resource/:resource_id", to: "resource#findOneResource"
+      patch "/resource/:owner_id/:resource_id", to: "resource#update"
+      delete "/resource/:owner_id/:resource_id", to: "resource#deleteOne"
+      delete "/resource/:owner_id", to: "resource#deleteAll"
     end
   end
 

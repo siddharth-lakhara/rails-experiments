@@ -8,7 +8,7 @@ Simple application built to understand rails. Following "experiments" has been d
 
 ## AI Cost log
 
-| Prompt | Cost |
+| Task | Cost |
 | --- | --- |
 | Fix bug in routing, by moving /user to /api/v1/user | 0.06 USD |
 | Implement first draft of UserController#create | 0.12 USD |
