@@ -15,7 +15,7 @@ module Api
         end
       end
 
-      def findOne
+      def find_one
         user = User.find_by(id: params[:user_id])
         if user.nil?
           return render json: { errors: "not found"}, status: :not_found
@@ -23,13 +23,13 @@ module Api
         render json: user.slice(:id, :name, :email), status: :ok
       end
 
-      def deleteUser
+      def delete_user
         user = User.find_by(id: params[:user_id])
         user.destroy if user
         head :ok
       end
 
-      def updateUser
+      def update_user
         user = User.find_by(id: params[:user_id])
         return render json: { errors: "not found" }, status: :not_found if user.nil?
 
