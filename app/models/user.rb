@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :resource, foreign_key: :owner_id
+
   validates :name, length: { minimum: 0, maximum: 25 }, allow_blank: true
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
